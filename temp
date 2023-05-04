@@ -1,0 +1,76 @@
+
+
+var levels = map[string]Level{
+	"1": {
+		PUB_Level: PUB_Level{
+			Title:   "Level 1: Hidden message using steganography",
+			Message: "Your hidden message is: ",
+			Images:  []string{"image.png"},
+			Files:   []string{"audio.mp3"},
+		},
+		Flag: "flag1",
+	},
+	"2": {
+		PUB_Level: PUB_Level{
+			Title:   "Level 2: Base 64 image",
+			Message: "Decode the following base64 encoded image:",
+			Images:  []string{"image.b64"},
+			Files:   nil,
+		},
+		Flag: "flag2",
+	},
+	"3": {
+		PUB_Level: PUB_Level{
+			Title:   "Level 3: Winrar and HTML conversion",
+			Message: "Combine the two HTML files to get the flag.",
+			Images:  nil,
+			Files:   []string{"file1.rar", "file2.rar"},
+		},
+		Flag: "flag3",
+	},
+	"4": {
+		PUB_Level: PUB_Level{
+			Title:   "Level 4: Complex puzzle, riddle or cipher",
+			Message: "Solve the puzzle to get the flag.",
+			Images:  []string{"puzzle.png"},
+			Files:   nil,
+		},
+		Flag: "flag4",
+	},
+	"5": {
+		PUB_Level: PUB_Level{
+			Title:   "Level 5: Geographic coordinates",
+			Message: "Use the following coordinates to find the flag:",
+			Images:  nil,
+			Files:   nil,
+		},
+		Flag: "flag5",
+	},
+	"6": {
+		PUB_Level: PUB_Level{
+			Title:   "Level 6: Audio or video recordings",
+			Message: "Decode the audio or video to get the flag.",
+			Images:  []string{"audio.mp3", "video.mp4"},
+			Files:   nil,
+		},
+		Flag: "flag6",
+	},
+	"8": {
+		PUB_Level: PUB_Level{
+			Title:   "Level 8: Social media account",
+			Message: "Find the hidden messages and clues on the social media account to get the flag.",
+			Images:  nil,
+			Files:   nil,
+		},
+		Flag: "flag8",
+	},
+	"9": {
+		PUB_Level: PUB_Level{
+			Title:   "Level 9: Offline server (Dino game)",
+			Message: "The server is down. Or is it?",
+			Images:  nil,
+			Files:   []string{"dino_game.exe"},
+		},
+		Flag: "flag9",
+	},
+}
