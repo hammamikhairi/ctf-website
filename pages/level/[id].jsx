@@ -21,14 +21,14 @@ export async function getServerSideProps(context) {
     };
   }
 
-  const res = await fetch(`https://ctf-website.vercel.app/api/player?id=${token}`);
+  const res = await fetch(`${BASE_URL}/player?playerId=${token}`);
   const user = await res.json();
   const {id} = context.params
 
-  if ("level" + user.LEVEL !== id) {
+  if ("level" + user.level !== id) {
     return {
       redirect: {
-        destination: `/level/level${user.LEVEL}`,
+        destination: `/level/level${user.level}`,
         permanent: false,
       },
     };
@@ -129,7 +129,7 @@ function Level({ user, level, currentLevel }) {
             level.Files &&
             <DownloadButton level={currentLevel} file={level.Files[0]} />
           }
-          <FlagForm level={currentLevel} playerId={user.PLAYER_ID} />
+          <FlagForm level={currentLevel} playerId={user.player_id} />
           {/* <DinoGame /> */}
         </div>
       </div>
