@@ -21,7 +21,7 @@ export async function getServerSideProps(context) {
     };
   }
 
-  const res = await fetch(`${BASE_URL}api/player?id=${token}`);
+  const res = await fetch(`https://ctf-website.vercel.app/api/player?id=${token}`);
   const user = await res.json();
   const {id} = context.params
 
@@ -112,7 +112,7 @@ function Level({ user, level, currentLevel }) {
   //     </>
   //   );
   // }
-  console.log(level.Image)
+  console.log(level.Images)
   return (
     <>
       <Head>
@@ -122,7 +122,7 @@ function Level({ user, level, currentLevel }) {
         <div className='level'>
           <h2>Level Message : {level.Message}</h2>
           {
-            level.Image &&
+            level.Images &&
             <img className='level-image' src={`/images/test.png`} alt="idk" />
           }
           {
