@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import DownloadButton from '../../componenets/DownloadButton/DownloadButton';
 import FlagForm from '../../componenets/FlagForm/FlagForm';
 
-const BASE_URL = "https://7b42-197-7-255-61.ngrok-free.app/"
-// const BASE_URL = "http://localhost:3000/"
+// const BASE_URL = "https://7b42-197-7-255-61.ngrok-free.app/"
+const BASE_URL = "http://localhost:5051/"
 
 
 export async function getServerSideProps(context) {
