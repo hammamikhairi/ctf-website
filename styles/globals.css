@@ -121,4 +121,8 @@ button {
   border: none;
   background-color: #f6f6f6ed;
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

@@ -1,6 +1,7 @@
 import cookies from 'next-cookies';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import DownloadButton from '../../componenets/DownloadButton/DownloadButton';
 import FlagForm from '../../componenets/FlagForm/FlagForm';
 
@@ -60,20 +61,25 @@ export async function getServerSideProps(context) {
 
 function Level({ user, level, currentLevel }) {
   const router = useRouter();
+  const [hidden, setHidden] = useState(level.Message.includes("$$") ? level.Message.split("$$")[1] : '')
 
   let hiddenInSource = null;
-  if (level.Message.includes("$$")) {
-    hiddenInSource = level.Message.split("$$")[1];
-  }
+
   const levelMessage = level.Message.split("$$")[0];
+
+  useEffect(() => {
+    if (!level.Message.includes("$$")) {
+      setHidden('')
+    }
+  }, [router.asPath])
 
   return (
     <>
       <Head>
         <title>{level.Title}</title>
         {
-          hiddenInSource != null &&
-          <noscript>{hiddenInSource}</noscript>
+          hidden != '' &&
+          <noscript>{hidden}</noscript>
         }
       </Head>
       <div className='level-container'>
