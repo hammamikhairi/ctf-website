@@ -40,15 +40,24 @@ export default function Players() {
       <h3>{time}</h3>
       <h1>List of Players:</h1>
       <ul>
-        {players.map((player) => (
-          <li key={player.PLAYER_ID}>
-            <p>ID: {player.PLAYER_ID}</p>
-            <p>Email: {player.EMAIL}</p>
-            <p>Player: {player.PLAYER}</p>
-            <p>Level: {player.LEVEL}</p>
-            <p>Updated at: {player.UPDATED_AT}</p>
-          </li>
-        ))}
+        {players.map((player) => {
+          if (player.LEVEL != 10) {
+            return(
+              <li key={player.PLAYER_ID}>
+                <p>Player: {player.PLAYER}</p>
+                <p>Level: {player.LEVEL}</p>
+              </li>
+            )
+          } else {
+            return(
+              <li key={player.PLAYER_ID} style={{backgroundColor : "red"}}>
+                <h3>WINNER</h3>
+                <p>Player: {player.PLAYER}</p>
+                <p>Level: {player.LEVEL}</p>
+              </li>
+            )
+          }
+        })}
       </ul>
     </div>
   );

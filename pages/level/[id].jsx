@@ -35,7 +35,16 @@ export async function getServerSideProps(context) {
       },
     };
   }
-  
+
+  if (currentLevel == 10) {
+    return  {
+      redirect: {
+        destination : "/congrats",
+        permanent: false,
+      }
+    }
+  }
+
   const levelRes = await fetch(`${BASE_URL}getLevel?level=${currentLevel}`)
   const level = await levelRes.json()
 
