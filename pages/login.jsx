@@ -8,14 +8,14 @@ export async function getServerSideProps(context) {
   const { token } = cookies(context);
   console.log(token)
 
-  if (token && context.req.url === '/login') {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    };
-  }
+  // if (token && context.req.url === '/login') {
+  //   return {
+  //     redirect: {
+  //       destination: '/',
+  //       permanent: false,
+  //     },
+  //   };
+  // }
 
   // If the user is logged in, continue to the requested page
   return { props: {} };
@@ -53,14 +53,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
+    <div className='login-container'>
+      <form className='login-form' onSubmit={handleLogin}>
         <div>
-          <label htmlFor="password">Identifier : </label>
-          <input type="password" id="password" value={identifier} onChange={(e) => setIdentifier(e.target.value)} />
+          <input placeholder='Identifier' type="password" id="password" className='level-form-input' value={identifier} onChange={(e) => setIdentifier(e.target.value)} />
         </div>
-        <button type="submit">Login</button>
+        <button className='login-form-button' type="submit">Login</button>
         {errorMessage && <div>{errorMessage}</div>}
       </form>
     </div>

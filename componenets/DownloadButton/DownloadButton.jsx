@@ -1,6 +1,5 @@
-// const BASE_URL = "https://7b42-197-7-255-61.ngrok-free.app/"
-const BASE_URL = "http://20.111.33.21/"
-// const BASE_URL = "http://localhost:5051/"
+// const BASE_URL = "http://20.111.33.21/"
+const BASE_URL = "http://localhost:5051/"
 
 
 const  DownloadButton = ({ level, file }) => {
@@ -13,11 +12,10 @@ const  DownloadButton = ({ level, file }) => {
       return response.blob();
     })
     .then(blob => {
-      const extension = file.split('.').pop();
       const url = window.URL.createObjectURL(new Blob([blob]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `Level${level}.${extension}`);
+      link.setAttribute('download', file);
       document.body.appendChild(link);
       link.click();
       link.parentNode.removeChild(link);
@@ -26,7 +24,7 @@ const  DownloadButton = ({ level, file }) => {
 }
 
 return (
-  <button onClick={handleDownload}>Download File {level}</button>
+  <button onClick={handleDownload} className="download-button">Download level File</button>
 );
 }
 

@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 
-const ChromeDinoComponentNoSsr = dynamic(() => import('../../componenets/dino/Dino'), {
+const ChromeDinoComponentNoSsr = dynamic(() => import('../componenets/dino/Dino'), {
   ssr: false,
 });
 
@@ -18,10 +18,10 @@ function HomePage() {
           Refreshing The Page
         </li>
         <li>
-         if refreshing doesn't work Call 56-488-593
+         That won't work, Call 56-488-593
         </li>
       </ul>
-        SERVER_ERR_OR_IS_IT
+        SERVER_ERR_OR_IS_IT_?
       </div>
     </div>
 
