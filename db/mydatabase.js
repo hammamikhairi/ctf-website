@@ -6,5 +6,4 @@ const db = new sqlite3.Database(path.join(__dirname, 'db', 'mydatabase.db'), (er
     if (err) {
         console.error(err.message);
     }
-    console.log('Connected to the database.');
 });

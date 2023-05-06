@@ -58,7 +58,6 @@ function Level({ user, level, currentLevel }) {
   }
   const levelMessage = level.Message.split("$$")[0];
 
-  console.log(level.Images)
   return (
     <>
       <Head>

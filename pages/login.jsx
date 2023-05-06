@@ -6,16 +6,15 @@ import cookies from 'next-cookies';
 
 export async function getServerSideProps(context) {
   const { token } = cookies(context);
-  console.log(token)
 
-  // if (token && context.req.url === '/login') {
-  //   return {
-  //     redirect: {
-  //       destination: '/',
-  //       permanent: false,
-  //     },
-  //   };
-  // }
+  if (token && context.req.url === '/login') {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
 
   // If the user is logged in, continue to the requested page
   return { props: {} };

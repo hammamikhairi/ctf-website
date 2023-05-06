@@ -9,7 +9,6 @@ const BASE_WEBSITE_URL = "http://localhost:3000/"
 
 export async function getServerSideProps(context) {
   const { token } = cookies(context);
-  console.log(token)
 
   if (!token && context.req.url !== '/login') {
     return {
